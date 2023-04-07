@@ -1,6 +1,6 @@
 package upstart.javalin.annotations;
 
-import io.javalin.core.security.RouteRole;
+import io.javalin.security.RouteRole;
 import io.javalin.http.Context;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;

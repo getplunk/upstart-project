@@ -1,6 +1,6 @@
 package upstart.javalin;
 
-import io.javalin.core.JavalinConfig;
+import io.javalin.config.JavalinConfig;
 
 @FunctionalInterface
 public interface JavalinWebInitializer {

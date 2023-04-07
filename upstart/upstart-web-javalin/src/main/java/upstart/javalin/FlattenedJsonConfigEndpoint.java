@@ -8,7 +8,7 @@ import upstart.config.UpstartModule;
 import upstart.javalin.annotations.OpenApiAnnotations;
 import upstart.util.exceptions.UncheckedIO;
 import upstart.web.FlattenedJsonConfigEndpointConfig;
-import io.javalin.core.JavalinConfig;
+import io.javalin.config.JavalinConfig;
 
 import javax.inject.Inject;
 import java.util.Map;

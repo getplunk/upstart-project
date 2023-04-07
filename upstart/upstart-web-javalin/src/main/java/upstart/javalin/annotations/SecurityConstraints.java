@@ -1,8 +1,8 @@
 package upstart.javalin.annotations;
 
 import com.google.common.collect.ImmutableSet;
-import io.javalin.core.security.RouteRole;
-import io.javalin.plugin.openapi.annotations.OpenApiSecurity;
+import io.javalin.security.RouteRole;
+import io.javalin.openapi.OpenApiSecurity;
 import org.immutables.value.Value;
 
 import java.util.Set;

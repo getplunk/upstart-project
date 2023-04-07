@@ -3,7 +3,7 @@ package upstart.javalin;
 import com.codahale.metrics.Meter;
 import com.codahale.metrics.MetricRegistry;
 import upstart.config.UpstartModule;
-import io.javalin.core.JavalinConfig;
+import io.javalin.config.JavalinConfig;
 import org.eclipse.jetty.http.HttpStatus;
 
 import javax.inject.Inject;

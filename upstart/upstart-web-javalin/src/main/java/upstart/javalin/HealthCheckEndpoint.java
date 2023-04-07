@@ -1,6 +1,6 @@
 package upstart.javalin;
 
-import io.javalin.core.JavalinConfig;
+import io.javalin.config.JavalinConfig;
 import upstart.config.annotations.ConfigPath;
 import upstart.healthchecks.HealthChecker;
 import upstart.javalin.annotations.OpenApiAnnotations;

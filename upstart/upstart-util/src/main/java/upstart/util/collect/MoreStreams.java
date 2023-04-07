@@ -3,10 +3,13 @@ package upstart.util.collect;
 import com.google.common.collect.AbstractIterator;
 import com.google.common.collect.Streams;
 import upstart.util.concurrent.Promise;
+import upstart.util.functions.MoreFunctions;
 
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -53,6 +56,10 @@ public class MoreStreams {
 
   public static <I, O> Stream<O> filter(Stream<I> inputs, Class<O> filterClass) {
     return inputs.filter(filterClass::isInstance).map(filterClass::cast);
+  }
+
+  public static <T> Stream<T> distinctBy(Stream<T> stream, Function<? super T, ?> keyExtractor) {
+    return stream.filter(MoreFunctions.onResultOf(keyExtractor, ConcurrentHashMap.newKeySet()::add));
   }
 
   public static <I, O> O foldLeft(O identity, Stream<I> stream, BiFunction<? super O, ? super I, ? extends O> combiner) {

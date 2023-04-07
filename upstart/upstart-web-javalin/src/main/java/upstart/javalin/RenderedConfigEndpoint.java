@@ -1,14 +1,12 @@
 package upstart.javalin;
 
 import io.javalin.http.ContentType;
-import io.javalin.plugin.openapi.dsl.OpenApiBuilder;
 import upstart.config.UpstartApplicationConfig;
 import upstart.config.UpstartModule;
-import upstart.javalin.annotations.OpenApiAnnotations;
 import upstart.web.ConfigEndpointConfig;
 import com.typesafe.config.ConfigObject;
 import com.typesafe.config.ConfigRenderOptions;
-import io.javalin.core.JavalinConfig;
+import io.javalin.config.JavalinConfig;
 
 import javax.inject.Inject;
 import java.nio.charset.StandardCharsets;
@@ -42,7 +40,7 @@ public class RenderedConfigEndpoint implements JavalinWebInitializer {
   @Override
   public void initializeWeb(JavalinConfig config) {
     byte[] rendered = appConfig.activeConfig().root().render(endpointConfig.renderOptions().parsed()).getBytes(StandardCharsets.UTF_8);
-    config.registerPlugin(javalin -> javalin.get(endpointConfig.uri(), openApiIgnored(ctx -> {
+    config.plugins.register(javalin -> javalin.get(endpointConfig.uri(), openApiIgnored(ctx -> {
       if (endpointConfig.renderOptions().json()) ctx.contentType(ContentType.JSON);
       ctx.result(rendered);
     }), AdminRole.Instance));

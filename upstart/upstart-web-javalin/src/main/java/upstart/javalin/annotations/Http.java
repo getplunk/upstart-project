@@ -2,7 +2,8 @@ package upstart.javalin.annotations;
 
 import io.javalin.http.HandlerType;
 import io.javalin.http.HttpCode;
-import io.javalin.plugin.openapi.annotations.OpenApiResponse;
+import io.javalin.http.HttpStatus;
+import io.javalin.openapi.OpenApiResponse;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -20,7 +21,7 @@ public @interface Http {
 
   boolean hideApiDoc() default false;
 
-  HttpCode successCode() default HttpCode.OK;
+  HttpStatus successCode() default HttpStatus.OK;
 
   enum Method {
     GET(HandlerType.GET),

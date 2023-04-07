@@ -2,12 +2,12 @@ package upstart.javalin.annotations;
 
 import com.google.common.collect.ObjectArrays;
 import io.javalin.http.Handler;
-import io.javalin.plugin.openapi.annotations.OpenApi;
-import io.javalin.plugin.openapi.annotations.OpenApiContent;
-import io.javalin.plugin.openapi.annotations.OpenApiResponse;
-import io.javalin.plugin.openapi.annotations.OpenApiSecurity;
+import io.javalin.openapi.OpenApi;
+import io.javalin.openapi.OpenApiContent;
+import io.javalin.openapi.OpenApiResponse;
+import io.javalin.openapi.OpenApiSecurity;
 import io.javalin.plugin.openapi.dsl.OpenApiBuilder;
-import io.javalin.plugin.openapi.dsl.OpenApiDocumentation;
+import io.javalin.openapi.OpenApiDocumentation;
 import org.immutables.value.Value;
 
 import java.util.Optional;
